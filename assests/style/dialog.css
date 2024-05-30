@@ -1,0 +1,60 @@
+.none {
+    display: none;
+}
+
+.container_overlay{
+    background-color: rgba(0, 0, 0, 0.507);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+.visible{
+display: flex;
+}
+
+.container_article{
+    background-color: white;
+    min-height: 500px;
+    width: 75%;
+    max-width: 750px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: 1.5rem ;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+  .container_article > :nth-last-child(n+3) {
+    grid-column: span 2;
+  }
+.btn--dialog{
+    position: absolute;
+    top: 0;
+    right:  0;
+    padding: 1rem;
+
+}
+.container_article img {
+    height: 200px;
+}
+.btn--dialog img {
+    height: 32px;
+}
+
+
+@media screen and (min-width:768px) {
+    .container_article{
+        padding: 3rem 5rem ;
+    }
+}

@@ -1,0 +1,53 @@
+.banner{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5 ;
+    border-radius: 0 0 0 120px ;
+   align-items: center;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+    max-width: 500px;
+    button{
+        background-color: black;
+        color: white;
+        max-width: fit-content;
+        border-radius: 1rem;
+        padding: 0.6rem 1rem
+        }
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+}
+.right img{
+    height: 250px;
+}
+
+@media screen and (min-width:1024px) {
+    .banner{
+        flex-direction: row;
+        justify-content: center;
+        width: 100%
+    }
+    .left{
+        order: 0;
+        justify-content: center;
+        max-width: 500px;
+    }
+    .right{
+        max-width: 500px;
+    }
+    .right img{
+        height: 450px;
+    }
+}
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - blog</title>
+    <link rel="icon"  href="/assests/img/favicon.svg "  type="image/x-icon">
+    <script src="./js/app.js" defer></script>
+    <link rel="stylesheet" href="./assests/style/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="header__mobile" id="menu-mobile">
+            <div class="overlay">
+                <ul>
+                    <li><a href="">Acceuil</a></li>
+                    <li><a href="">Notre histoire</a></li>
+                    <li><a href="">Contact</a> </li>
+                    <li> <a href="">Blog</a> </li>
+                </ul>
+                <button data-dialog="#menu-mobile">
+                    <img src="./assests/img/icone/close.svg" alt="">
+                </button>
+            </div>
+        </div>
+        <nav>
+            <img class="logo" src="./assests/img/logo.svg" alt="logo blog">
+            <ul class="nav_desktop">
+                <li><a href="">Acceuil</a></li>
+                <li><a href="">Notre histoire</a> </li>
+                <li><a href="">Contact</a> </li>
+                <li> <a href="">Blog</a> </li>
+            </ul>
+            <label class="search">
+                <img src="./assests/img/icone/search.svg" alt="">
+                <input class="input_search" type="text" placeholder="Rechercher un article">
+            </label>
+            <div class="container_btn">
+                <button data-dialog="#menu-mobile" aria-label="Ouvrir le menu">
+                    <img src="./assests/img/icone/menu.svg" alt="icone de menu-mobile">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="left">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum labore deleniti, necessitatibus
+                    dolores corrupti veritatis! Quae, distinctio. Dolorem, totam eveniet nemo autem modi adipisci et
+                    sapiente consequuntur, sequi, voluptatem tempora.</p>
+                    <button><a href="#article">Consulter les article</a></button>
+            </div>
+            <div class="right">
+                    <!-- mondifier balise img pour balise picture-->
+                <img src="./assests/img/banner.png" alt="">
+            </div>
+        </div>
+        <div id="article" class="container_card">
+        </div>
+    </main>
+    <footer>
+        <img src="./assests/img/logo.svg" alt="">
+        <p>Mariane Bouchard</p>
+        <p>Production en medias intéractif</p>
+        <time datetime="2024-06-14">14 juin 2024</time>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+:root {
+    --gris :#F5F5F5;
+}
+ 
+
+body:has(.header__mobile [open]) {
+    overflow-y: hidden;
+  }
+
+
+.header__mobile {
+    display: none;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(0, 0, 0, 0.356);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+}
+
+
+.header__mobile[open] {
+    animation: opIn 0.3s ease forwards;
+    display: block;
+  }
+
+  .header__mobile[closing] {
+    animation: opOut 0.3s ease forwards;
+  }
+  
+  .header__mobile[open] .overlay {
+    animation: slideIn .6s ease forwards;
+    display: block;
+  }
+
+  .header__mobile[closing] .overlay {
+    animation: slideOut .6s ease forwards;
+  }
+  
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw;
+    background-color: white;
+    box-shadow: 4px 4px 10px #0000005c;
+
+}
+
+.overlay>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.overlay a{
+    font-size: 1.5rem;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--gris)
+}
+
+.nav_desktop {
+    display: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.container_btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__mobile button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.logo{
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.search input {
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: .5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .container_btn {
+        display: none;
+    }
+    .nav_desktop {
+        display: flex;
+        width: 60%;
+        gap: 2rem;
+        align-items: center;
+    }
+    .logo {
+        max-width: 150px;
+    }
+}
+
