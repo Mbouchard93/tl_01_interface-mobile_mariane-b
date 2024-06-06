@@ -53,8 +53,10 @@
                     <button><a href="#article">Consulter les article</a></button>
             </div>
             <div class="right">
-                    <!-- mondifier balise img pour balise picture-->
-                <img src="./assests/img/banner.png" alt="">
+                <picture>
+                    <source srcset="./assests/img/banner.png" media="(min-width: 768px)" />
+                    <img src="./assests/img/banner.png" alt="image de deux personne qui point un document">
+                  </picture>
             </div>
         </div>
         <div id="article" class="container_card">

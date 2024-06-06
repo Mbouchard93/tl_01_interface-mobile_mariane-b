@@ -70,8 +70,9 @@ const articles = [
 ];
 
 class DialogBlog {
-    constructor(title, img, desct, autor) {
+    constructor(title,  date, img, desct, autor) {
       this.title = title;
+      this.date = date
       this.img = img;
       this.desct = desct;
       this.autor = autor;
@@ -81,6 +82,7 @@ class DialogBlog {
   const dialogBlogs = [
     new DialogBlog(
       "Le parcous d'une programmeur en apprentissage",
+      'Date : 01 mai 2024',
       "./assests/img/article/bug_article.jpg",
       `Lors de la dernière session, j'étais encore en train d'apprendre et tout me semblait nouveau. J'utilisais souvent des articles en ligne, des tutoriels ou ChatGPT pour m'aider à résoudre mes problèmes. C'est là que j'ai compris que ChatGPT est super utile, mais ça ne remplace pas une bonne compréhension de la documentation ou une base solide de connaissances. J'ai lu tellement d'articles sur les différentes méthodes en JavaScript que c'est devenu une habitude quotidienne.
 
@@ -91,6 +93,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Simplicité et Flexibilité : Un voyage à travers la découverte de Vue.js",
+      'Date : 07 mai 2024',
       "./assests/img/article/vue_article.jpg",
       `Vue.js est un framework JavaScript idéal pour créer des interfaces utilisateur grâce à sa flexibilité et sa facilité d'utilisation.
       Il permet de décrire la structure HTML de manière déclarative et met à jour automatiquement le DOM lorsque l'état JavaScript change.
@@ -105,6 +108,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Plongée dans React : Réutilisation des composants et défis d’apprentissage",
+      'Date : 17 mai 2024',
       "./assests/img/article/react_article.jpg",
       `React.js, souvent appelé simplement React, est une bibliothèque JavaScript open source développée par Meta (anciennement Facebook) pour la construction d’interfaces utilisateur. 
       Il est connu pour sa facilité d’apprentissage, sa haute performance et sa capacité à créer des composants réutilisables. React utilise une syntaxe appelée JSX qui combine JavaScript et 
@@ -118,6 +122,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Angular : Un cadre complet pour le développement web - Avantages, fonctionnalités et défis",
+      'Date : 04 juin 2024',
       "./assests/img/article/angular_article.jpg",
       `Angular est un framework open-source basé sur TypeScript qui facilite la création d’applications Web complexes grâce à sa structure solide et ses fonctionnalités avancées. 
       Il permet aux développeurs de transformer des documents HTML statiques en contenu dynamique et offre une architecture de composants polyvalente, idéale pour la construction
@@ -129,6 +134,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Svelte : Une révolution dans la compilation pour des applications front-end plus rapides",
+      'Date : 21 mai 2024',
       "./assests/img/article/svelte_article.jpg",
       `Svelte et Angular sont deux frameworks JavaScript destinés au développement d’applications Web, cependant, ils diffèrent considérablement dans leurs approches. Angular, créé par Google, est un framework complet qui fournit une solution intégrée pour la construction d’applications Web. Il adopte l’architecture MVC (Model-View-Controller) et offre un ensemble solide d’outils et de fonctionnalités. 
       De plus, Angular est construit sur TypeScript, une extension de JavaScript qui apporte des capacités de typage statique.
@@ -139,6 +145,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Ember.js : Accélérer le développement grâce à la philosophie de la convention sur la configuration",
+      'Date : 07 juin 2024',
       "./assests/img/article/ember_article.jpg",
       `: Ember.js est un framework pour les applications web ambitieuses. Il est reconnu pour sa philosophie de “convention sur configuration”,
        qui peut considérablement accélérer le processus de développement. Cette philosophie signifie que, plutôt que de passer du temps à configurer 
@@ -149,6 +156,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Preact : Une alternative légère à React pour des applications web plus performantes",
+      'Date : 01 juin 2024',
       "./assests/img/article/preact_article.jpg",
       `Preact est une alternative plus petite et plus légère à React, offrant une grande partie de la même API tout en ayant une taille de bundle beaucoup plus petite. 
       Cette taille réduite peut conduire à des temps de chargement plus rapides et à une meilleure performance globale de l’application. Preact est donc idéal pour les développeurs qui 
@@ -159,6 +167,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "jQuery : Simplifier la manipulation du document HTML et les interactions Ajax",
+      'Date : 29 avril 2024',
       "./assests/img/article/jquery_article.jpg",
       `jQuery est une bibliothèque JavaScript rapide et concise qui simplifie grandement la manipulation du document HTML, le traitement des événements, l’animation et les interactions Ajax.
        Grâce à sa syntaxe facile à utiliser, jQuery permet aux développeurs de créer des applications web dynamiques avec moins de code et moins de complexité. 
@@ -169,6 +178,7 @@ class DialogBlog {
     ),
     new DialogBlog(
       "Locomotive Scroll : Transformer l’expérience de défilement sur votre site web",
+      'Date : 05 mai 2024',
       "./assests/img/article/locomotivescroll_article.jpg",
       `Locomotive Scroll est une bibliothèque JavaScript puissante qui peut révolutionner l’expérience de défilement sur votre site web.
        Elle offre aux développeurs la possibilité de créer des effets de défilement fluides et personnalisés, améliorant ainsi l’interaction de l’utilisateur avec le site. Cependant, il est important de noter que, bien que Locomotive Scroll offre une grande flexibilité, il peut y avoir des moments où vous n’avez pas un contrôle total sur les performances. 
@@ -183,6 +193,7 @@ function createOverlay(dialog) {
   const closeButton = document.createElement("button");
   const btnDialog = document.createElement("img");
   const title = document.createElement("h3");
+  const date = document.createElement ('time')
   const img = document.createElement("img");
   const desct = document.createElement("p");
   const autor = document.createElement("p");
@@ -193,6 +204,7 @@ function createOverlay(dialog) {
   let timeReading = Math.ceil(nbWords / 150);
 
   title.textContent = dialog.title;
+  date.textContent = dialog.date
   img.src = dialog.img;
   desct.textContent = dialog.desct;
   autor.textContent = dialog.autor;
@@ -207,6 +219,7 @@ function createOverlay(dialog) {
   closeButton.appendChild(btnDialog);
   overlayDiv.appendChild(closeButton);
   overlayDiv.appendChild(title);
+  overlayDiv.appendChild(date)
   overlayDiv.appendChild(img);
   overlayDiv.appendChild(desct);
   overlayDiv.appendChild(autor);
