@@ -231,6 +231,13 @@ function createOverlay(dialog) {
   closeButton.addEventListener("click", () => {
     containerOverlay.classList.replace("visible", "none");
   });
+
+  containerOverlay.addEventListener("click", (e) => {
+    if (e.target === containerOverlay) {
+      containerOverlay.classList.replace("visible", "none");
+    }
+  });
+
   return containerOverlay;
 }
 
@@ -298,20 +305,23 @@ input.addEventListener("input", () => {
 /**BOUTON TOGGLE */
 const main = document.querySelector('main');
 const toggle = document.createElement('button')
-toggle.textContent ='toggle'
+toggle.textContent ='Affichage : Liste'
 toggle.classList.add('btn_toggle')
 main.appendChild(toggle);
 
-function toggleClass(element, className) {
-    element.classList.toggle(className);
-}
-
 toggle.addEventListener('click' , ()  => {
-    toggleClass(container, 'container_card');
-    toggleClass(container, 'container_list');
-    cards.forEach((card) => {
-        toggleClass(card, 'card_list');
-    })
+  if (container.classList.contains('container_card')) {
+      container.classList.toggle('container_card');
+      toggle.textContent = 'Affichage : Carte';
+      container.classList.toggle('container_list');
+  } else {
+      container.classList.toggle('container_list');
+      toggle.textContent = 'Affichage : Liste';
+      container.classList.toggle('container_card');
+  }
+  cards.forEach((card) => {
+      card.classList.toggle('card_list');
+  })
 })
 
 /*MENU HAMBURGER*/
