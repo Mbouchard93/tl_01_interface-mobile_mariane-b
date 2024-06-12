@@ -1,73 +1,11 @@
-/*card*/
-/**
- * @typedef {Object} Product
- * @property {string} titre
- * @property {string} img
- * @property {string} shortDesc
- * @property {string} button
- */
+  /**
 
-/**
- * @type {Product[]} products
- */
-
-
-const articles = [
-  {
-    title: "Résolution de Problèmes",
-    img: "./assests/img/cards/bug.svg",
-    desct:
-      "Cet article décrit les défis rencontrés lors de la création d’une page web interactive, en mettant l’accent sur les problèmes spécifiques, les sources consultées et les solutions qui ont permis la création du site",
-  },
-  {
-    title: " Découverte de Vue",
-    img: "./assests/img/cards/vue.svg",
-    desct:
-      "Une bibliothèque JavaScript progressive pour la construction d’interfaces utilisateur, qui se distingue par sa flexibilité et sa simplicité d’utilisation.",
-  },
-  {
-    title: "Exploration de React",
-    img: "./assests/img/cards/react.svg",
-    desct:
-      "Une bibliothèque JavaScript pour la construction d’interfaces utilisateur, connue pour la réutilisation des composants, mais avec une courbe d’apprentissage abrupte.",
-  },
-  {
-    title: "Angular Cadre Complet",
-    img: "./assests/img/cards/angular.svg",
-    desct:
-      "Robuste pour le développement d’applications web , offrant une structure claire, des fonctionnalités intégrées, un support pour TypeScript, mais avec une courbe d’apprentissage plus raide.",
-  },
-  {
-    title: "Svelte Compilation Innovante",
-    img: "./assests/img/cards/svelte.svg",
-    desct:
-      "Svelte est un nouveau venu dans le monde des frameworks front-end. Il se distingue par son approche de compilation, qui peut conduire à des applications plus rapides.",
-  },
-  {
-    title: "Ember Convention sur Configuration",
-    img: "./assests/img/cards/ember.png",
-    desct:
-      "un cadre de travail pour les applications web ambitieuses. Il est connu pour sa philosophie de “convention sur configuration”, ce qui peut accélérer le développement.",
-  },
-  {
-    title: "Preact Alternative Légère",
-    img: "./assests/img/cards/preact.svg",
-    desct:
-      "Preact est une alternative plus petite à React. Elle offre une grande partie de la même API tout en ayant une taille de bundle beaucoup plus petite.",
-  },
-  {
-    title: "jQuery Manipulation Facile",
-    img: "./assests/img/cards/jquery.svg",
-    desct:
-      " jQuery est une bibliothèque JavaScript rapide et concise qui simplifie la manipulation du document HTML, le traitement des événements, l’animation et les interactions Ajax.",
-  },
-  {
-    title: "Révolutionner l’expérience de défilement",
-    img: "./assests/img/cards/locomotivescroll.png",
-    desct:
-      "une bibliothèque JavaScript puissante, peut transformer l’expérience de défilement sur votre site web. Apprenez à créer des effets de défilement fluides et personnalisés",
-  },
-];
+   * @param {string} title 
+   * @param {string} date 
+   * @param {string} img 
+   * @param {string} desct 
+   * @param {string} autor 
+   */
 
 class DialogBlog {
     constructor(title,  date, img, desct, autor) {
@@ -79,6 +17,10 @@ class DialogBlog {
     }
   }
   
+/**
+ * @type {DialogBlog[]}
+ */
+
   const dialogBlogs = [
     new DialogBlog(
       "Le parcous d'une programmeur en apprentissage",
@@ -187,7 +129,17 @@ class DialogBlog {
     ),
   ];
 
-
+/**
+ * 
+ * @param {Object} dialog 
+ * @param {string} dialog.title 
+ * @param {string} dialog.date 
+ * @param {string} dialog.img 
+ * @param {string} dialog.desct 
+ * @param {string} dialog.autor 
+ * @returns {HTMLDivElement} 
+ */
+  
 function createOverlay(dialog) {
   const overlayDiv = document.createElement("div");
   const closeButton = document.createElement("button");
@@ -241,10 +193,83 @@ function createOverlay(dialog) {
   return containerOverlay;
 }
 
+/**
+
+ * @type {{title: string, img: string, desct: string}[]}
+ */
+
+const articles = [
+    {
+      title: "Résolution de Problèmes",
+      img: "./assests/img/cards/bug.svg",
+      desct:
+        "Cet article décrit les défis rencontrés lors de la création d’une page web interactive, en mettant l’accent sur les problèmes spécifiques, les sources consultées et les solutions qui ont permis la création du site",
+    },
+    {
+      title: " Découverte de Vue",
+      img: "./assests/img/cards/vue.svg",
+      desct:
+        "Une bibliothèque JavaScript progressive pour la construction d’interfaces utilisateur, qui se distingue par sa flexibilité et sa simplicité d’utilisation.",
+    },
+    {
+      title: "Exploration de React",
+      img: "./assests/img/cards/react.svg",
+      desct:
+        "Une bibliothèque JavaScript pour la construction d’interfaces utilisateur, connue pour la réutilisation des composants, mais avec une courbe d’apprentissage abrupte.",
+    },
+    {
+      title: "Angular Cadre Complet",
+      img: "./assests/img/cards/angular.svg",
+      desct:
+        "Robuste pour le développement d’applications web , offrant une structure claire, des fonctionnalités intégrées, un support pour TypeScript, mais avec une courbe d’apprentissage plus raide.",
+    },
+    {
+      title: "Svelte Compilation Innovante",
+      img: "./assests/img/cards/svelte.svg",
+      desct:
+        "Svelte est un nouveau venu dans le monde des frameworks front-end. Il se distingue par son approche de compilation, qui peut conduire à des applications plus rapides.",
+    },
+    {
+      title: "Ember Convention sur Configuration",
+      img: "./assests/img/cards/ember.png",
+      desct:
+        "un cadre de travail pour les applications web ambitieuses. Il est connu pour sa philosophie de “convention sur configuration”, ce qui peut accélérer le développement.",
+    },
+    {
+      title: "Preact Alternative Légère",
+      img: "./assests/img/cards/preact.svg",
+      desct:
+        "Preact est une alternative plus petite à React. Elle offre une grande partie de la même API tout en ayant une taille de bundle beaucoup plus petite.",
+    },
+    {
+      title: "jQuery Manipulation Facile",
+      img: "./assests/img/cards/jquery.svg",
+      desct:
+        " jQuery est une bibliothèque JavaScript rapide et concise qui simplifie la manipulation du document HTML, le traitement des événements, l’animation et les interactions Ajax.",
+    },
+    {
+      title: "Révolutionner l’expérience de défilement",
+      img: "./assests/img/cards/locomotivescroll.png",
+      desct:
+        "une bibliothèque JavaScript puissante, peut transformer l’expérience de défilement sur votre site web. Apprenez à créer des effets de défilement fluides et personnalisés",
+    },
+  ];
+
+  /**
+ * @type {HTMLInputElement}
+ */
 const input = document.querySelector(".input_search");
+
+/**
+ * @type {HTMLDivElement}
+ */
 const container = document.querySelector(".container_card");
 
-
+/**
+ * @param {{title: string, img: string, desct: string}} article 
+ * @param {number} index 
+ * @returns {HTMLDivElement} 
+ */
 
 function toHtml(article, index) {
   const div = document.createElement("div");
@@ -284,84 +309,4 @@ function toHtml(article, index) {
 articles.forEach((article, index) => {
   container.appendChild(toHtml(article, index));
 
-});
-
-
-/** BARRE DE RECHERCHE*/
-const cards = document.querySelectorAll(".card");
-
-input.addEventListener("input", () => {
-  const searchValue = input.value.toLowerCase();
-  cards.forEach((card) => {
-    const searchData = card.getAttribute("data-search").toLocaleLowerCase();
-    if (searchData.includes(searchValue)) {
-      card.classList.remove("hidden");
-    } else {
-      card.classList.add("hidden");
-    }
-  });
-});
-
-/**BOUTON TOGGLE */
-const main = document.querySelector('main');
-const toggle = document.createElement('button')
-toggle.textContent ='Affichage : Liste'
-toggle.classList.add('btn_toggle')
-main.appendChild(toggle);
-
-toggle.addEventListener('click' , ()  => {
-  if (container.classList.contains('container_card')) {
-      container.classList.toggle('container_card');
-      toggle.textContent = 'Affichage : Carte';
-      container.classList.toggle('container_list');
-  } else {
-      container.classList.toggle('container_list');
-      toggle.textContent = 'Affichage : Liste';
-      container.classList.toggle('container_card');
-  }
-  cards.forEach((card) => {
-      card.classList.toggle('card_list');
-  })
-})
-
-/*MENU HAMBURGER*/
-const dialogs = document.querySelectorAll(".header__mobile");
-const btnDialog = document.querySelectorAll("button[data-dialog]");
-
-function closingDialog(e) {
-  const dialog = e.target;
-
-  dialog.removeAttribute("closing");
-  dialog.removeAttribute("open", "");
-
-  dialog.removeEventListener("animationend", closingDialog);
-}
-
-function closeDialog(dialog) {
-  dialog.setAttribute("closing", "");
-  dialog.addEventListener("animationend", closingDialog);
-}
-
-btnDialog.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const dialogSelector = btn.getAttribute("data-dialog");
-    const dialog = document.querySelector(dialogSelector);
-    if (dialog) {
-      if (dialog.checkVisibility()) {
-        closeDialog(dialog);
-      } else {
-        dialog.setAttribute("open", "");
-      }
-    }
-  });
-});
-
-dialogs.forEach((dialog) => {
-  dialog.addEventListener("click", () => {});
-  const childrens = dialog.querySelectorAll("& > *");
-  childrens.forEach((children) => {
-    children.addEventListener("click", (e) => {
-      e.stopImmediatePropagation();
-    });
-  });
 });
