@@ -1,3 +1,5 @@
+/** Je crois qu'il aurait été préférable de nommer ce fichier dialog et non menu */
+
 /**
  * @type {NodeListOf<Element>}
  */
