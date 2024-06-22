@@ -53,7 +53,7 @@ display: flex;
     height: 32px;
 }
 
-
+/* Hmm, on pourrait argumenter que container_article ne fait pas partie de dialog.css :) */
 @media screen and (min-width:768px) {
     .container_article{
         padding: 3rem 5rem ;

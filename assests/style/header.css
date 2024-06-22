@@ -19,6 +19,7 @@ body:has(.header__mobile [open]) {
 
 }
 
+/** Tu as fait plusieurs erreurs d'indentation. Il existe des outils qui pourraient t'aider. */
 
 .header__mobile[open] {
     animation: opIn 0.3s ease forwards;

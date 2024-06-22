@@ -1,3 +1,5 @@
+/* Good job, il te manque quelques ; par contre.  */
+
 /**
  * @type {HTMLElement}
  */

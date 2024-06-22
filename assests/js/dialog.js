@@ -1,5 +1,6 @@
-  /**
+  /* J'aurais préféré que tu utilise le systeme de dialog utilisé pour le menu mobile. Cela démontre que tu ne comprend pas vraiment ce qui se passe dans le fichier menu.js. Good job tho. */
 
+  /**
    * @param {string} title 
    * @param {string} date 
    * @param {string} img 
@@ -21,6 +22,7 @@ class DialogBlog {
  * @type {DialogBlog[]}
  */
 
+/* Pourquoi avoir sépéré tes données en deux (l'autre a la ligne 205) tableaux contenant chacun leur type d'objet, nous parlons pourtant du meme sujet. Article de blog. Cela créer une duplication des données en plus d'augmenter le risque d'erreur. */
   const dialogBlogs = [
     new DialogBlog(
       "Le parcous d'une programmeur en apprentissage",
@@ -129,6 +131,8 @@ class DialogBlog {
     ),
   ];
 
+/** Tu aurais pu typer comme à la ligne 21 mais sans les []. */
+
 /**
  * 
  * @param {Object} dialog 
@@ -152,6 +156,7 @@ function createOverlay(dialog) {
   const timeReadingElement = document.createElement("p");
   const nbWordsElement = document.createElement("p");
 
+  /** Nice algorithme pour definir le temps de read */
   let nbWords = dialog.desct.split(" ").length;
   let timeReading = Math.ceil(nbWords / 150);
 
@@ -289,6 +294,7 @@ function toHtml(article, index) {
   const overlay = createOverlay(dialogBlogs[index]);
   button.addEventListener("click", () => {
     if (overlay.classList.contains("none")) {
+      /** Je ne crois pas qu'il soit necessaire de replace ici. Il serait plus optimal d'utiliser un style par defaut et de toggle l'autre classe  */
       overlay.classList.replace("none", "visible");
     } else {
       overlay.classList.replace("visible", "none");
